@@ -1,0 +1,1137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>MarketTribes | Smart Books Group | Documents</title>
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/global.css" />
+	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/jquery-ui.css" />	
+	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/autocomplete.css" />	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jquery.fcbkcomplete.min.js"></script>	
+	<script type="text/javascript" src="js/jquery.roundies.js"></script>
+	<script type="text/javascript" src="js/jquery.browser.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$("input").focus(function () { $(this).val(''); });
+			DD_roundies.addRule('.rounded', '8px');
+			
+			$('#new-document').dialog({bgiframe: true, resizable: false, draggable: false, modal: true, height: 355, width: 495, autoOpen: false});
+
+			$('#new-event').dialog({bgiframe: true, resizable: false, draggable: false, modal: true, height: 520, width: 495, autoOpen: false});
+
+			$('#notifications').dialog({bgiframe: true, resizable: false, draggable: false, modal: true, height: 340, width: 515, autoOpen: false});
+
+			$('#invite-people').dialog({bgiframe: true, resizable: false, draggable: false, modal: true, height: 590, width: 495, autoOpen: false});
+
+			$('#invite-people2').dialog({bgiframe: true, resizable: false, draggable: false, modal: true, height: 400, width: 495, autoOpen: false});
+
+			$('#new-group').dialog({bgiframe: true, resizable: false, draggable: false, modal: true, height: 500, width: 495, autoOpen: false});
+
+			$('#access-rights').dialog({bgiframe: true, resizable: false, draggable: false, modal: true, height: 360, width: 495, autoOpen: false});
+
+			$('#add-remove-cat').dialog({bgiframe: true, resizable: false, draggable: false, modal: true, height: 360, width: 395, autoOpen: false});
+
+			$('#member-contacts').dialog({bgiframe: true, resizable: false, draggable: false, modal: true, height: 410, width: 495, autoOpen: false});
+	
+			$('a.sprite-page').click(function(){
+				$('#new-document').dialog('open');
+			});
+
+			$('a.sprite-calendar-month').click(function(){
+				$('#new-event').dialog('open');
+			});
+
+			$('.sprite-notification a').click(function(){
+				$('#notifications').dialog('open');
+			});
+
+			$('.sprite-users a').click(function(){
+				$('#invite-people').dialog('open');
+			});
+
+			$('a#add-remove').click(function(){
+				$('#add-remove-cat').dialog('open');
+			});
+			
+			$('.close-trigger').click(function(){
+				$('#new-document, #new-event, #notifications, #invite-people, #invite-people2, #new-group, #access-rights').dialog('close');			
+			});
+
+			$("#invite-people-join").fcbkcomplete({
+				json_url: "js/fetched.txt",
+				cache: true,
+				filter_case: true,
+				filter_hide: true,
+				newel: true
+			});
+			
+			$("#invite-people-event").fcbkcomplete({
+				json_url: "js/fetched.txt",
+				cache: true,
+				filter_case: true,
+				filter_hide: true,
+				newel: true
+			});
+
+			$("#associate-group").fcbkcomplete({
+				json_url: "js/fetched.txt",
+				cache: true,
+				filter_case: true,
+				filter_hide: true,
+				newel: true
+			});
+
+			$("#people-view").fcbkcomplete({
+				json_url: "js/fetched.txt",
+				cache: true,
+				filter_case: true,
+				filter_hide: true,
+				newel: true
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<div id="main">
+		<a href="" title="Logout" class="logout">Logout</a>
+		<div id="header">
+			<h1 id="logo"><a href="">MarketTribes</a></h1>
+			<ul id="navigation">
+				<li><a href="">Dashboard</a></li>
+				<li><a href="">Collaborate</a></li>
+				<li><a href="">Apps</a></li>
+				<li><a href="">Store</a></li>
+				<li><a href="">People</a></li>
+			</ul>
+			<form action="/" method="get" accept-charset="utf-8" id="searchForm">
+				<ul>
+					<li><a href="">My Profile</a></li>
+					<li><a href="">Inbox (2)</a></li>
+				</ul>
+				<p>
+					<input type="text" name="searchTerms" value="Search&hellip;" />
+				</p>
+			</form>
+		</div><!-- /header -->
+		<div id="container">
+			<div id="column-left">
+				<img src="img/group-logo.gif" alt="" class="logo" />
+				<div id="left-navigation" class="box rounded">
+					<ul>
+						<li><a href="">Latest Activity</a></li>
+						<li><a href="">Discussions</a></li>
+						<li><a href="">Events<span>2</span></a></li>
+						<li><a href="" class="current">Documents</a></li>
+						<li><a href="">Members</a></li>
+					</ul>
+					<form action="/" method="get" accept-charset="utf-8" id="groupForm">
+						<p><input type="text" name="searchGroups" value="Search Group&hellip;" /></p>
+					</form>
+					<p><a href="" class="sprite sprite-arrow">Back to all Groups</a></p>
+				</div><!-- /box -->
+				<div id="recommendations" class="box">
+					<h4 class="sprite sprite-stats">App Recommendations</h4>
+					<ul>
+						<li><a href="">&middot;<span>Group Intellingence</span></a></li>
+						<li><a href="">&middot;<span>Marketing Assessments</span></a></li>
+					</ul>
+				</div><!-- /box -->
+			</div><!-- /column-left -->
+			
+			<div id="column-center">
+				<ul class="content-navigation">
+					<li>
+						<a href="" class="item">New Item</a>
+						<ul>
+							<li><a href="#" class="sprite sprite-balloon">Discussion</a></li>
+							<li><a href="#" class="sprite sprite-calendar-month">Event</a></li>
+							<li><a href="#" class="sprite sprite-page">Document</a></li>
+							<li><a href="#" class="sprite sprite-email">Message</a></li>
+						</ul>
+					</li>
+				</ul>
+				<h2 class="title">Smart Books Group <span>> Documents</span> <span>> All</span></h2>
+				<table border="0" width="100%" class="table-discussion">
+					<tbody>
+						<tr>
+							<td width="16">
+								<span class="sprite sprite-document-pdf"></span>
+							</td>
+							<td>
+								
+								<h3><a href="">Strategic Partnership Opportunities.pdf</a></h3>
+								<small>0 comments | 12 views | Off-Topic</small>
+							</td>
+							<td align="right">
+								<small class="author">Updated by <a href="">Chris Johanson</a></small>
+								<small>5 minutes ago</small>
+							</td>
+							<td class="last">
+								<a href=""><img src="img/examples/avatar-1.gif" alt="" /></a>
+							</td>
+						</tr>
+						<tr>
+							<td width="16">
+								<span class="sprite sprite-document-avi"></span>
+							</td>
+							<td>
+								
+								<h3><a href="">New_Open.avi</a></h3>
+								<small>0 comments | 12 views | Off-Topic</small>
+							</td>
+							<td align="right">
+								<small class="author">Updated by <a href="">Chris Johanson</a></small>
+								<small>5 minutes ago</small>
+							</td>
+							<td class="last">
+								<a href=""><img src="img/examples/avatar-1.gif" alt="" /></a>
+							</td>
+						</tr>
+						<tr>
+							<td width="16">
+								<span class="sprite sprite-document-excel"></span>
+							</td>
+							<td>
+								
+								<h3><a href="">Hover-Effect.xls</a></h3>
+								<small>0 comments | 12 views | Off-Topic</small>
+							</td>
+							<td align="right">
+								<small class="author">Updated by <a href="">Chris Johanson</a></small>
+								<small>5 minutes ago</small>
+							</td>
+							<td class="last">
+								<a href=""><img src="img/examples/avatar-1.gif" alt="" /></a>
+							</td>
+						</tr>
+						<tr>
+							<td width="16">
+								<span class="sprite sprite-document-ppt"></span>
+							</td>
+							<td>
+								
+								<h3><a href="">Sales_Plan.pptx</a></h3>
+								<small>0 comments | 12 views | Off-Topic</small>
+							</td>
+							<td align="right">
+								<small class="author">Updated by <a href="">Chris Johanson</a></small>
+								<small>5 minutes ago</small>
+							</td>
+							<td class="last">
+								<a href=""><img src="img/examples/avatar-1.gif" alt="" /></a>
+							</td>
+						</tr>
+						<tr>
+							<td width="16">
+								<span class="sprite sprite-document-text"></span>
+							</td>
+							<td>
+								
+								<h3><a href="">Click-On-Circle.txt</a></h3>
+								<small>0 comments | 12 views | Off-Topic</small>
+							</td>
+							<td align="right">
+								<small class="author">Updated by <a href="">Chris Johanson</a></small>
+								<small>5 minutes ago</small>
+							</td>
+							<td class="last">
+								<a href=""><img src="img/examples/avatar-1.gif" alt="" /></a>
+							</td>
+						</tr>
+						<tr>
+							<td width="16">
+								<span class="sprite sprite-document-word-text"></span>
+							</td>
+							<td>
+								
+								<h3><a href="">Cool Doc.docx</a></h3>
+								<small>0 comments | 12 views | Off-Topic</small>
+							</td>
+							<td align="right">
+								<small class="author">Updated by <a href="">Chris Johanson</a></small>
+								<small>5 minutes ago</small>
+							</td>
+							<td class="last">
+								<a href=""><img src="img/examples/avatar-1.gif" alt="" /></a>
+							</td>
+						</tr>
+						<tr>
+							<td width="16">
+								<span class="sprite sprite-document-zipper"></span>
+							</td>
+							<td>
+								
+								<h3><a href="">Resource Planning for Spring.zip</a></h3>
+								<small>0 comments | 12 views | Off-Topic</small>
+							</td>
+							<td align="right">
+								<small class="author">Updated by <a href="">Chris Johanson</a></small>
+								<small>5 minutes ago</small>
+							</td>
+							<td class="last">
+								<a href=""><img src="img/examples/avatar-1.gif" alt="" /></a>
+							</td>
+						</tr>
+						<tr>
+							<td width="16">
+								<span class="sprite sprite-document"></span>
+							</td>
+							<td>
+								
+								<h3><a href="">New Ads.mkv</a></h3>
+								<small>0 comments | 12 views | Off-Topic</small>
+							</td>
+							<td align="right">
+								<small class="author">Updated by <a href="">Chris Johanson</a></small>
+								<small>5 minutes ago</small>
+							</td>
+							<td class="last">
+								<a href=""><img src="img/examples/avatar-1.gif" alt="" /></a>
+							</td>
+						</tr>
+						<tr>
+							<td width="16">
+								<span class="sprite sprite-document-image"></span>
+							</td>
+							<td>
+								
+								<h3><a href="">sunlight.jpg</a></h3>
+								<small>0 comments | 12 views | Off-Topic</small>
+							</td>
+							<td align="right">
+								<small class="author">Updated by <a href="">Chris Johanson</a></small>
+								<small>5 minutes ago</small>
+							</td>
+							<td class="last">
+								<a href=""><img src="img/examples/avatar-1.gif" alt="" /></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<p><a href="" class="sprite sprite-arrow-down">More Discussions&hellip;</a></p>
+			</div><!-- /column-center -->
+			
+			<div id="column-right">
+				<div id="tools" class="box">
+					<ul>
+						<li class="sprite sprite-users"><a href="#">Invite People to Join</a></li>
+						<li class="sprite sprite-notification"><a href="#">Notification Preferences</a></li>
+						<li class="sprite sprite-settings"><a href="#">Group Settings</a></li>
+					</ul>
+				</div><!-- /box -->
+				<div id="categories" class="box rounded">
+					<h3>Categories <span>(<a id="add-remove" href="#">add/remove</a>)</span></h3>
+					<ul>
+						<li><a href="" class="current">All <span>(221)</span></a></li>
+						<li><a href="">Ideas <span>(151)</span></a></li>
+						<li><a href="">Project Related <span>(4)</span></a></li>
+						<li><a href="">Off-Topic <span>(5)</span></a></li>
+						<li><a href="">Strategy <span>(31)</span></a></li>
+					</ul>
+				</div><!-- /box -->
+				<div id="expert" class="box">
+					<p>How will China's new regula-<br />tions affect my bussiness?</p>
+					<a href="" class="button">Ask an Expert!</a>
+				</div><!-- /box -->
+			</div><!-- /column-right -->
+		</div><!-- /container -->
+	</div><!-- /main -->
+
+	<div id="access-rights" title="Access Rights">
+			<form method="post" action="/">						
+				<table>
+					<tr>
+						<td>
+							<h3>Visibility</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="select">Who can view this document?</span>
+							<select>
+								<option>Only Me</option>
+								<option>Everyone</option>
+								<option selected="selected">Specific People</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="gray-box">
+								<div class="textarea-container2">
+									<p class="field-label">Select People</p>
+									<textarea id="people-view"></textarea>
+								</div>
+							</div>	
+						</td>
+					</tr>
+					<tr class="padding short">
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<h3>Editors</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="select">Who can edit this document?</span>
+							<select>
+								<option>Just Me</option>
+								<option>All Editors</option>
+								<option>Admins</option>
+							</select>
+						</td>
+					</tr>
+					<tr class="padding extra">
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<h3>Commenting</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="select">What is the commenting policy?</span>
+							<select class="long">
+								<option>No Comments Allowed</option>
+								<option>Closed (no additional comments)</option>
+								<option>Open (anyone can comment)</option>
+							</select>
+						</td>
+					</tr>
+
+				</table>
+			</form>
+			<div class="modal-buttons">
+				<div class="save-cancel">
+					<div class="button-blue submit-event-details"><a href=""><span></span><strong>OK</strong></a></div>
+					<div class="button-gray close-trigger"><a href=""><span></span><strong>Cancel</strong></a></div>
+				</div>
+			</div>
+	</div><!-- /access-rights -->
+
+	<div id="add-remove-cat" title="Add/Remove Categories">
+			<form method="post" action="/">						
+				<table>
+					<tr>
+						<td>
+							<input type="text" class="text-field short" />
+							<input type="button" class="button" value="Add" />
+						</td>
+						<td colspan="2"></td>
+					</tr>
+					<tr class="padding med"><td colspan="3"></td></tr>
+					<tr class="border"><td colspan="3"></td></tr>
+					<tr class="padding med"><td colspan="3"></td></tr>
+					<tr>
+						<td><p class="categories">Ideas</p></td>
+						<td>
+							<a href="" class="rename">Rename</a>
+						</td>
+						<td width="16">
+							<a href="#" class="sprite sprite-close"></a>
+						</td>
+					</tr>
+					<tr class="padding med"><td colspan="3"></td></tr>
+					<tr class="border"><td colspan="3"></td></tr>
+					<tr class="padding med"><td colspan="3"></td></tr>
+					<tr>
+						<td>
+							<input type="text" class="text-field short" />
+						</td>
+						<td>
+							<a href="" class="rename">Save</a>
+						</td>
+						<td>
+							<img src="img/spinner.gif" alt="spinner" width="16" height="16">
+						</td>
+					</tr>
+					<tr class="padding med"><td colspan="3"></td></tr>
+					<tr class="border"><td colspan="3"></td></tr>
+					<tr class="padding med"><td colspan="3"></td></tr>
+					<tr>
+						<td><p class="categories">Project Related</p></td>
+						<td>
+							<a href="" class="rename">Rename</a>
+						</td>
+						<td width="16">
+							<a href="#" class="sprite sprite-close"></a>
+						</td>
+					</tr>
+					<tr class="padding med"><td colspan="3"></td></tr>
+					<tr class="border"><td colspan="3"></td></tr>
+					<tr class="padding med"><td colspan="3"></td></tr>
+					<tr>
+						<td><p class="categories">Off-Topic</p></td>
+						<td>
+							<a href="" class="rename">Rename</a>
+						</td>
+						<td width="16">
+							<a href="#" class="sprite sprite-close"></a>
+						</td>
+					</tr>
+					<tr class="padding med"><td colspan="3"></td></tr>
+					<tr class="border"><td colspan="3"></td></tr>
+					<tr class="padding med"><td colspan="3"></td></tr>
+					<tr>
+						<td><p class="categories">Strategy</p></td>
+						<td>
+							<a href="" class="rename">Rename</a>
+						</td>
+						<td width="16">
+							<a href="#" class="sprite sprite-close"></a>
+						</td>
+					</tr>
+					<tr class="padding med"><td colspan="3"></td></tr>
+					<tr class="border"><td colspan="3"></td></tr>
+					<tr class="padding med"><td colspan="3"></td></tr>
+				</table>
+			</form>
+			<div class="modal-buttons">
+				<div class="save-cancel">
+					<div class="button-blue submit-event-details"><a href=""><span></span><strong>OK</strong></a></div>
+					<div class="button-gray close-trigger"><a href=""><span></span><strong>Cancel</strong></a></div>
+				</div>
+			</div>
+	</div><!-- /add-remove-cat -->	
+
+
+	<div id="new-group" title="New Group">
+			<form method="post" action="/">						
+				<table>
+					<tr>
+						<td>
+							<p class="section-header">Group Name</p>
+						</td>
+						<td colspan="2">
+							<input type="text" class="text-field medium" value="Category Name" />
+						</td>
+					</tr>
+					<tr class="padding">
+						<td colspan="3"></td>
+					</tr>
+					<tr>
+						<td class="align-top">
+							<p class="section-header">Description</p>
+							<small class="optional">(optional)</small>
+						</td>
+						<td colspan="2">
+							<textarea class="short"></textarea>
+							<small>62 char left</small>
+						</td>
+					</tr>
+					<tr class="padding">
+						<td colspan="3"></td>
+					</tr>
+					<tr>
+						<td class="align-top">
+							<p class="section-header">Logo/Picture</p>
+							<small class="optional">(optional)</small>
+						</td>
+						<td colspan="2">
+							<input type="file" value="Choose File" />
+							<img src="img/spinner.gif" class="spinner" alt="spinner" width="16" height="16">
+							<small>JPG, PNG or GIF - Max 2MB</small>
+						</td>
+					</tr>
+					<tr class="padding">
+						<td colspan="3"></td>
+					</tr>
+					<tr class="border">
+						<td colspan="3"></td>
+					</tr>
+					<tr class="padding">
+						<td colspan="3"></td>
+					</tr>
+					<tr>
+						<td class="align-top">
+							<p class="section-header">Access Type</p>
+						</td>
+						<td class="align-top">
+							<input type="radio" name="radio" id="radio-private" class="radio" checked="checked" />
+						</td>
+						<td>
+							<label for="radio-private" class="header">Private</label>
+							<p class="explanation">Only invited people can view, join and contribute.</p>
+						</td>
+					</tr>
+					<tr class="padding">
+						<td colspan="3"></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td class="align-top">
+							<input type="radio" name="radio" id="radio-public" class="radio" />
+						</td>
+						<td>
+							<label for="radio-public" class="header">Public</label>
+							<p class="explanation">Anyone can view and request to join.</p>
+						</td>
+					</tr>
+					<tr class="padding">
+						<td colspan="3"></td>
+					</tr>
+					<tr class="border">
+						<td colspan="3"></td>
+					</tr>
+					<tr class="padding">
+						<td colspan="3"></td>
+					</tr>
+					<tr>
+						<td class="align-top">
+							<p class="section-header">Listing</p>
+							<small class="optional">(optional)</small>
+						</td>
+						<td class="align-top">
+							<input type="checkbox" id="check-global" checked="checked" />
+						</td>
+						<td style="vertical-align: text-top">
+							<label>List this group in the global directory</label>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td class="align-top">
+							<input type="checkbox" id="check-associate" checked="checked" />
+						</td>
+						<td>
+							<label>Associate this group with other group(s):</label>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td class="group-association">
+							<input type="text" class="text-field medium" id="associate-group" />
+						</td>
+					</tr>
+				</table>
+			</form>
+			<div class="modal-buttons">
+				<div class="save-cancel">
+					<div class="button-blue submit-event-details"><a href=""><span></span><strong>OK</strong></a></div>
+					<div class="button-gray close-trigger"><a href=""><span></span><strong>Cancel</strong></a></div>
+				</div>
+			</div>
+	</div><!-- /new-group -->	
+
+	<div id="member-contacts" title="Invite People to This Group">
+			<form method="post" action="/">
+				<table>
+					<tr>
+						<td>
+							<h3>114 Total Contacts</h3>
+						</td>
+						<td>
+							<input type="text" name="searchTerms" value="Search&hellip;" class="searchModal" />
+						</td>
+					</tr>
+				</table>			
+				<div class="box">
+					<div>
+						<table>
+							<tr>
+								<td width="32" height="34">
+									<img src="img/examples/avatar-1.gif" alt="" />
+								</td>
+								<td>
+									<p class="member"><span>Chris Johnson</span> - Team Leader Tribeca System</p>
+								</td>
+								<td width="114">
+									<a href="" class="add-btn">Add as Contact</a>
+								</td>
+							</tr>
+							<tr>
+								<td width="32" height="34">
+									<img src="img/examples/avatar-1.gif" alt="" />
+								</td>
+								<td>
+									<p class="member"><span>Chris Johnson</span> - Team Leader Tribeca System</p>
+								</td>
+								<td width="114">
+								</td>
+							</tr>
+							<tr>
+								<td width="32" height="34">
+									<img src="img/examples/avatar-1.gif" alt="" />
+								</td>
+								<td>
+									<p class="member"><span>Chris Johnson</span> - Team Leader Tribeca System</p>
+								</td>
+								<td width="114">
+									<a href="" class="add-btn">Add as Contact</a>
+								</td>
+							</tr>
+							<tr>
+								<td width="32" height="34">
+									<img src="img/examples/avatar-1.gif" alt="" />
+								</td>
+								<td>
+									<p class="member"><span>Chris Johnson</span> - Team Leader Tribeca System</p>
+								</td>
+								<td width="114">
+								</td>
+							</tr>
+							<tr>
+								<td width="32" height="34">
+									<img src="img/examples/avatar-1.gif" alt="" />
+								</td>
+								<td>
+									<p class="member"><span>Chris Johnson</span> - Team Leader Tribeca System</p>
+								</td>
+								<td width="114">
+									<a href="" class="add-btn">Add as Contact</a>
+								</td>
+							</tr>
+							<tr>
+								<td width="32" height="34">
+									<img src="img/examples/avatar-1.gif" alt="" />
+								</td>
+								<td>
+									<p class="member"><span>Chris Johnson</span> - Team Leader Tribeca System</p>
+								</td>
+								<td width="114">
+									<a href="" class="add-btn">Add as Contact</a>
+								</td>
+							</tr>
+							<tr>
+								<td width="32" height="34">
+									<img src="img/examples/avatar-1.gif" alt="" />
+								</td>
+								<td>
+									<p class="member"><span>Chris Johnson</span> - Team Leader Tribeca System</p>
+								</td>
+								<td width="114">
+									<a href="" class="add-btn">Add as Contact</a>
+								</td>
+							</tr>
+							<tr>
+								<td width="32" height="34">
+									<img src="img/examples/avatar-1.gif" alt="" />
+								</td>
+								<td>
+									<p class="member"><span>Chris Johnson</span> - Team Leader Tribeca System</p>
+								</td>
+								<td width="114">
+									<a href="" class="add-btn">Add as Contact</a>
+								</td>
+							</tr>														
+						</table>
+					</div>
+				</div>
+			</form>
+			<div class="modal-buttons">
+				<div class="save-cancel">
+					<div class="button-blue submit-event-details"><a href=""><span></span><strong>OK</strong></a></div>
+					<div class="button-gray close-trigger"><a href=""><span></span><strong>Cancel</strong></a></div>
+				</div>
+			</div>
+	</div><!-- /member-contacts -->	
+
+	<div id="invite-people2" title="Invite People to This Group">
+			<form method="post" action="/">						
+				<p class="explanation">Confirm whom you’d like to invite:</p>
+				<div class="box">
+					<div>
+						<div class="checkbox-row">
+							<input type="checkbox" id="select-all" />
+							<label for="select-all" style="font-weight:bold">Select All 75 Contacts</label>
+						</div>
+						<div class="checkbox-row">
+							<input type="checkbox" id="person-1" />
+							<label for="person-1">Jim Dodole</label>
+						</div>
+						<div class="checkbox-row">
+							<input type="checkbox" id="person-2" />
+							<label for="person-2">John McCurrentuser</label>
+						</div>
+						<div class="checkbox-row">
+							<input type="checkbox" id="person-3" />
+							<label for="person-3">John McCurrentuser</label>
+						</div>
+						<div class="checkbox-row">
+							<input type="checkbox" id="person-4" />
+							<label for="person-4">John McCurrentuser</label>
+						</div>
+						<div class="checkbox-row">
+							<input type="checkbox" id="person-5" />
+							<label for="person-5">John McCurrentuser</label>
+						</div>
+						<div class="checkbox-row">
+							<input type="checkbox" id="person-6" />
+							<label for="person-6">John McCurrentuser</label>
+						</div>
+						<div class="checkbox-row">
+							<input type="checkbox" id="person-7" />
+							<label for="person-7">John McCurrentuser</label>
+						</div>
+						<div class="checkbox-row">
+							<input type="checkbox" id="person-8" />
+							<label for="person-8">John McCurrentuser</label>
+						</div>
+						<div class="checkbox-row">
+							<input type="checkbox" id="person-9" />
+							<label for="person-9">John McCurrentuser</label>
+						</div>
+						<div class="checkbox-row">
+							<input type="checkbox" id="person-10" />
+							<label for="person-10">John McCurrentuser</label>
+						</div>
+						<div class="checkbox-row">
+							<input type="checkbox" id="person-11" />
+							<label for="person-11">John McCurrentuser</label>
+						</div>
+					</div>
+				</div>
+			</form>
+			<div class="modal-buttons">
+				<div class="save-cancel">
+					<div class="button-blue submit-event-details"><a href=""><span></span><strong>OK</strong></a></div>
+					<div class="button-gray close-trigger"><a href=""><span></span><strong>Cancel</strong></a></div>
+				</div>
+			</div>
+	</div><!-- /invite-people2 -->	
+
+	<div id="invite-people" title="Invite People to This Group">
+			<form method="post" action="/">						
+				<table>
+					<tr>
+						<td class="align-top">
+							<input type="radio" name="radio" id="radio-people" class="radio" checked="checked" />
+						</td>
+						<td>
+							<label for="radio-people" class="header">Find People</label>
+							<p class="explanation">Search MarketTribe members by name or invite people by e-mail.</p>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<div class="gray-box">
+								<div class="textarea-container">
+									<p class="field-label">Name or E-mail Address</p>
+									<textarea id="invite-people-join" cols="3" rows="4"></textarea>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="align-top">
+							<input type="radio" name="radio" id="radio-groups" class="radio" />
+						</td>
+						<td>
+							<label for="radio-groups" class="header">From Associated Groups</label>
+							<p class="explanation">Invite all people from groups associated with this group.</p>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<div class="gray-box">
+								<div>
+									<p class="field-label">Select Associated Groups</p>
+									<table style="margin-top:5px;">
+										<tr>
+											<td>
+												<input type="checkbox" id="group-1" />
+												<label for="group-1">Marketing Initiative</label>
+											</td>
+											<td>
+												<input type="checkbox" id="group-2" />
+												<label for="group-2">Strategic Planning 101</label>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input type="checkbox" id="group-3" />
+												<label for="group-3">Smart Books Manager</label>
+											</td>
+											<td></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="align-top">
+							<input type="radio" name="radio" id="radio-import" class="radio" />
+						</td>
+						<td>
+							<label for="radio-import" class="header">Import People</label>
+							<p class="explanation">Import your contacts from your desktop or webmail account.</p>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<div class="gray-box">
+								<div>
+									<div>
+										<p class="field-label">Import From a File</p>
+										<input type="file" value="Choose File" />
+										<img src="img/spinner.gif" class="spinner" alt="spinner" width="16" height="16">
+										<small>(must be a .csv or .vcf file)</small>
+									</div>
+									<div>
+										<p class="field-label">Import From Your Email Account</p>
+										<input type="text" class="text-field medium" value="" />
+										<small>(gmail.com, hotmail.com, yahoo.com, aol.com)</small>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<div class="modal-buttons">
+				<div class="save-cancel">
+					<div class="button-blue submit-event-details"><a href=""><span></span><strong>OK</strong></a></div>
+					<div class="button-gray close-trigger"><a href=""><span></span><strong>Cancel</strong></a></div>
+				</div>
+			</div>
+	</div><!-- /invite-people -->	
+
+	<div id="notifications" title="Notification Preferences">
+			<form method="post" action="/">						
+				<table>
+					<tr>
+						<td width="24">
+							<div class="sprite sprite-email-notifs"></div>
+						</td>
+						<td>
+							<p class="field-label explanation">Email Notifications</p>
+						</td>
+					</tr>
+					
+					<tr>
+						<td></td>
+						<td>
+							<div class="row">
+								<input type="checkbox" id="daily-digest" />
+								<label for="daily-digest">Receive a daily email digest of the latest activity in this group.</label>
+							</div>
+							<div class="row">
+								<input type="checkbox" id="involved" />
+								<label for="involved">Receive an email every time there is activity in which you are involved.</label>
+							</div>
+							<div class="row">
+								<table>
+									<tr>
+										<td>
+											<input type="checkbox" id="everytime" />
+											<label for="everytime">Receive an email every time there is activity in:</label>
+										</td>
+										<td>
+											<input type="checkbox" id="everytime-all" />
+											<label for="everytime-all">All</label>
+										</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>
+											<input type="checkbox" id="everytime-discussions" />
+											<label for="everytime-discussions">Discussions</label>
+										</td>
+										<td>
+											<input type="checkbox" id="everytime-documents" />
+											<label for="everytime-documents">Documents</label>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>
+											<input type="checkbox" id="everytime-events" />
+											<label for="everytime-events">Events</label>
+										</td>
+										<td>
+											<input type="checkbox" id="everytime-members" />
+											<label for="everytime-members">Members</label>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="border"></div>
+						</td>
+						<td>
+							<div class="border"></div>
+						</td>
+					</tr>
+					<tr class="padding">
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<div class="sprite sprite-rss"></div>
+						</td>
+						<td>
+							<p class="field-label explanation">RSS Feed</p>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<p class="explanation">Receive a Real-Time update of this Group's latest activities:</p>
+							<a href="#" class="rss-link">rss://www.markettribes.com/?198213asd.xml<span class="copy">copy</span></a>
+						</td>
+					</tr>					
+				</table>
+			</form>
+			<div class="modal-buttons">
+				<div class="save-cancel">
+					<div class="button-blue submit-event-details"><a href=""><span></span><strong>OK</strong></a></div>
+					<div class="button-gray close-trigger"><a href=""><span></span><strong>Cancel</strong></a></div>
+				</div>
+			</div>
+	</div><!-- /notifications -->	
+
+	<div id="new-event" title="New Event">
+			<form method="post" action="/">						
+				<table>
+					<tr>
+						<td class="align-top">
+							<input type="radio" name="radio" id="radio-meeting" class="radio" checked="checked" />
+						</td>
+						<td>
+							<label for="radio-meeting" class="header">Meeting</label>
+							<p class="explanation">Invite people to a scheduled event.</p>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<div class="gray-box">
+								<p class="all"><input type="checkbox" />Invite All People In Group</p>
+								<div>
+									<p class="field-label">Invite People</p>
+									<input type="text" class="text-field long" id="invite-people-event" value="Joseph Brown" />
+								</div>
+								<div>
+									<p class="field-label">Title</p>
+									<input type="text" class="text-field" value="Sales Agenda" />
+								</div>
+								<div>
+									<p class="field-label">Description</p>
+									<input type="text" class="text-field long" value="Annual Group Meeting at 1245 W 10th Ave, Boston, MA" />
+								</div>
+								<div>
+									<p class="field-label">Date & Time</p>
+									<input type="text" class="text-field date" value="Dec 15, 2009" />
+									<input type="text" class="text-field time" value="12:30pm" />
+									<span>to</span>
+									<input type="text" class="text-field time" value="1:30pm" />
+								</div>
+								<div>
+									<p class="field-label">Category</p>
+									<select class="repeat_every" name="staff">
+										<option>Ideas</option>
+										<option selected="selected">Project Related</option>
+										<option>Off-Topic</option>
+										<option>Strategy</option>
+									</select>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="align-top">
+							<input type="radio" name="radio" id="radio-task" class="radio" />
+						</td>
+						<td>
+							<label for="radio-task" class="header">Task</label>
+							<p class="explanation">Assign tasks to people with a due date.</p>
+						</td>
+					</tr>
+					<tr class="padding">
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="align-top">
+							<input type="radio" name="radio" id="radio-milestone" class="radio" />
+						</td>
+						<td>
+							<label for="radio-milestone" class="header">Milestone</label>
+							<p class="explanation">Mark important group-wide dates.</p>
+						</td>
+					</tr>					
+				</table>
+			</form>
+			<div class="modal-buttons">
+				<div class="save-cancel">
+					<div class="button-blue submit-event-details"><a href=""><span></span><strong>OK</strong></a></div>
+					<div class="button-gray close-trigger"><a href=""><span></span><strong>Cancel</strong></a></div>
+				</div>
+			</div>
+	</div><!-- /new-event -->	
+	
+	<div id="new-document" title="New Document">
+			<form method="post" action="/">						
+				<table>
+					<tr>
+						<td class="align-top">
+							<input type="radio" name="radio" id="radio-file" class="radio" checked="checked" />
+						</td>
+						<td>
+							<label for="radio-file" class="header">Upload a File</label>
+							<p class="explanation">Max size: 50mb, all types allowed.</p>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<div class="gray-box">
+								<div>
+									<input type="file" value="Choose File" />
+									<img src="img/spinner.gif" class="spinner" alt="spinner" width="16" height="16">
+								</div>
+								<div>
+									<p class="field-label">Document Title</p>
+									<input type="text" class="text-field" value="sales_presentation.pdf" />
+								</div>
+								<div>
+									<p class="field-label">Category</p>
+									<select class="repeat_every" name="staff">
+										<option>Ideas</option>
+										<option selected="selected">Project Related</option>
+										<option>Off-Topic</option>
+										<option>Strategy</option>
+									</select>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="align-top">
+							<input type="radio" name="radio" id="radio-docu" class="radio" />
+						</td>
+						<td>
+							<label for="radio-docu" class="header">Create a Document</label>
+							<p class="explanation">A web-based document that multiple people can edit online.</p>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<div class="modal-buttons">
+				<div class="save-cancel">
+					<div class="button-blue submit-event-details"><a href=""><span></span><strong>OK</strong></a></div>
+					<div class="button-gray close-trigger"><a href=""><span></span><strong>Cancel</strong></a></div>
+				</div>
+			</div>
+	</div><!-- /new-document -->
+	
+</body>
+</html>
+

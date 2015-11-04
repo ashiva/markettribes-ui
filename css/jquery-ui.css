@@ -1,0 +1,141 @@
+/*
+* jQuery UI CSS Framework
+* Copyright (c) 2009 AUTHORS.txt (http://jqueryui.com/about)
+* Dual licensed under the MIT (MIT-LICENSE.txt) and GPL (GPL-LICENSE.txt) licenses.
+*/
+
+/* Layout helpers
+----------------------------------*/
+.ui-helper-hidden { display: none; }
+.ui-helper-hidden-accessible { position: absolute; left: -99999999px; }
+.ui-helper-reset { margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }
+.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ui-helper-clearfix { display: inline-block; }
+/* required comment for clearfix to work in Opera \*/
+* html .ui-helper-clearfix { height:1%; }
+.ui-helper-clearfix { display:block; }
+/* end clearfix */
+.ui-helper-zfix { width: 100%; height: 100%; top: 0; left: 0; position: absolute; opacity: 0; filter:Alpha(Opacity=0); }
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled { cursor: default !important; }
+
+/* Overlays 
+----------------------------------*/
+.ui-widget-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #22282d url(/img/backgrounds/bg-modal-overlay.png) 50% 50% repeat-x; opacity: .73; filter: Alpha(Opacity=73);}
+
+
+/* Component containers
+----------------------------------*/
+.ui-widget { font-family: Helvetica, Arial, Sans-Serif; font-size: 1em; }
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button { font-family: Helvetica, Arial, Sans-Serif;}
+.ui-widget-content a { color: #4b555b; }
+
+/* Dialog
+----------------------------------*/
+.ui-dialog { position: relative; -webkit-box-shadow: 0px 0px 16px #17191c; -moz-box-shadow: #17191c 0px 0px 16px; -webkit-border-radius:8px; -moz-border-radius: 8px; }
+.ui-dialog .ui-dialog-titlebar-close { position: absolute; right: 14px; top: 14px; width: 10px; height: 10px; background: url(/img/close-icon.gif) no-repeat 0 0; overflow: hidden;}
+.ui-dialog .ui-dialog-titlebar-close span { display: block;}
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus {}
+.ui-dialog .ui-dialog-content { border: 0; background: #fafafa; overflow: auto; zoom: 1;}
+.ui-dialog .ui-dialog-buttonpane { text-align: left; background: #fafafa; padding: .3em 1em .5em .4em; }
+.ui-dialog .ui-dialog-buttonpane button { float: right; margin: .5em .4em .5em 0; cursor: pointer; padding: .2em .6em .3em .6em; line-height: 1.4em; width:auto; overflow:visible; }
+
+.ui-dialog-content {display: block; border-width: 0; background: none; color: #4b555b; font-size: 12px; font-family: Tahoma, Verdana, sans-serif; -moz-border-radius-bottomleft: 8px; -webkit-border-bottom-left-radius: 8px; -moz-border-radius-bottomright: 8px; -webkit-border-bottom-right-radius: 8px;}
+.ui-dialog-content a{text-decoration: underline; font-weight: bold;}
+.ui-dialog-content p{font-size: 12px; font-weight: normal; margin: 0;}
+
+.ui-dialog .ui-dialog-titlebar {background: url(/img/backgrounds/bg-modal-header.png) repeat-x; height: 43px; -moz-border-radius-topleft: 8px; -webkit-border-top-left-radius: 8px; -moz-border-radius-topright: 8px; -webkit-border-top-right-radius: 8px;} 
+.ui-dialog .ui-dialog-title {float: left; line-height: 43px; margin-left: 18px; font-size: 14px; color: #ffffff; font-weight: bold; text-shadow: 0px 1px 1px #314250;}
+.ui-dialog form {margin: 15px 18px 0 18px;}
+.ui-dialog table {margin: 0; width: 100%;}
+.ui-dialog table tbody tr td {background: none; border: none; padding: 0;}
+.ui-dialog table tbody tr td.align-top {vertical-align: top; width: 23px;}
+.ui-dialog .border {height: 1px; margin-top: 5px; width: 100%; border-bottom: 1px solid #dce1e3;}
+.ui-dialog input.radio {margin: 0; padding: 0;}
+.ui-dialog input.text-field {background: url(/img/backgrounds/bg-text-field.png) repeat-x; height: 20px; width: 200px; font-size: 13px; border: none; border-right: 1px solid #a1a4a8; margin: 0; padding: 7px 7px 0 7px;}
+.ui-dialog input.text-field.long {width: 378px;}
+.ui-dialog input.text-field.medium {width: 250px;}
+.ui-dialog input.text-field.date {width: 90px;}
+.ui-dialog input.text-field.time {width: 55px;}
+.ui-dialog textarea {background: url(/img/backgrounds/bg-textarea.png) no-repeat; height: 100px; width: 378px; border: 1px solid #a1a4a8; margin: 0; padding: 7px 7px 0 7px; font-size: 13px;}
+.ui-dialog textarea.short {width: 350px; height: 60px;}
+.ui-dialog select {width: 140px; height: 20px; }
+.ui-dialog label.header {color: #0a96d2; font-size: 13px; font-weight: bold;}
+.ui-dialog h3 {font-size: 13px;}
+.ui-dialog p, .ui-dialog span {color: #7e96a2;}
+.ui-dialog p.field-label {font-family: Helvetica, Arial, Sans-Serif;}
+.ui-dialog p.explanation, .ui-dialog h3 {color: #52636b;}
+.ui-dialog p.field-label {font-weight: bold; margin-bottom: 2px;}
+.ui-dialog p.section-header {color: #52636b; font-weight: bold; text-align: right; margin-right: 12px; font-family: Helvetica, Arial, Sans-Serif;}
+.ui-dialog p.categories {font-size: 14px; font-family: Tahoma, Verdanna, Serif;}
+.ui-dialog p.all {font-size: 11px; float: right; margin: 7px 11px 0 0;}
+.ui-dialog p.member {font-weight: normal; font-family: Tahoma, Verdanna, Serif; font-size: 11px;}
+.ui-dialog p.member span {color: #0a96d2;}
+.ui-dialog a.rename {color: #5b8924; font-size: 11px; margin-right: 5px;}
+.ui-dialog span {display: inline; font-weight: bold;}
+.ui-dialog .spinner {position: relative; top: 3px;}
+.ui-dialog .box, .ui-dialog .gray-box {background: #f6f6f6; border: 1px solid #dce2e3; margin: 8px 0 12px 0; padding: 0 15px;}
+.ui-dialog .gray-box {-webkit-border-radius:8px; -moz-border-radius: 8px;}
+.ui-dialog .box {max-height: 250px; overflow-y: auto;}
+.ui-dialog .box div, .ui-dialog .gray-box div {margin: 10px 0;}
+.ui-dialog .padding {height: 12px;}
+.ui-dialog .padding.med {height: 9px;}
+.ui-dialog .padding.short {height: 6px;}
+.ui-dialog .padding.extra {height: 20px;}
+.ui-dialog .row {padding: 5px 0;}
+.ui-dialog div.checkbox-row {padding: 2px 0; margin: 0;}
+.ui-dialog a.rss-link {color: #0a96d2; text-decoration: none; padding-top: 8px; display: block;}
+.ui-dialog a.rss-link span {color: #0a96d2; font-size: 11px; background: #e8eced; padding: 1px 5px 2px 5px; margin-left: 10px; -moz-border-radius: 5px; -ms-border-radius: 5px; -webkit-border-radius: 5px; }
+.ui-dialog a.rss-link span:hover {text-decoration: underline;}
+.ui-dialog small {display: block; margin-top: 3px;}
+.ui-dialog small.optional {margin-right: 12px; text-align: right; font-size: 12px; font-family: Helvetica, Arial, Sans-Serif; }
+.ui-dialog span.select {font-weight: normal;}
+.ui-dialog select.long {width: 180px;}
+.ui-dialog a.sprite {display: block; width: 16px; height: 16px; top: 0}
+.ui-dialog a.add-btn {height: 25px; line-height: 23px; width: 114px; background: url(/img/add-btn.png) no-repeat; display: block; font-size: 10px; text-decoration: none; text-align: center; font-family: Tahoma, Verdanna, Serif;}
+
+/* Buttons
+----------------------------------*/
+
+.modal-buttons{position:absolute; bottom:0; height: 51px; width: 100%; background: url(/img/backgrounds/bg-modal-footer.png) repeat-x; -moz-border-radius-bottomleft: 8px; -webkit-border-bottom-left-radius: 8px; -moz-border-radius-bottomright: 8px; -webkit-border-bottom-right-radius: 8px;}
+.modal-buttons .save-cancel{margin: 12px 12px 0 0;}
+.modal-buttons .save-cancel .button-blue, .modal-buttons .save-cancel .button-gray {float: right; padding-left: 9px;}
+
+.button-blue a, .button-gray a {color:#191919; text-decoration: none; text-shadow: 0px 1px 1px #ffffff; font-family: Tahoma, Verdana, Sans-Serif; -moz-user-select: none; -webkit-user-select: none; -khtml-user-select: none; user-select: none; font-weight: bold; font-size: 12px; text-decoration: none; color:#191919}
+	.safari.win .button-blue a, .safari.win .button-gray a {text-shadow: none;}
+.button-blue a {color: #fff;  text-shadow: 0px 1px 1px #00496e;}
+.button-blue a:focus, .button-gray a:focus{outline:none;}
+.button-blue a span, .button-blue a strong, .button-gray a span, .button-gray a strong {float: left; display: block; height: 27px; line-height: 25px;}
+	.msie7 .button-blue a span, .msie6 .button-blue a span, .msie7 .button-blue a strong, .msie6 .button-blue a strong, .firefox.win .button-blue a strong, .firefox.win .button-blue a span, .safari.win .button-blue a strong, .safari.win .button-blue a span, .chrome.win .button-blue a strong, .chrome.win .button-blue a span, .msie7 .button-gray a span, .msie6 .button-gray a span, .msie7 .button-gray a strong, .msie6 .button-gray a strong, .firefox.win .button-gray a strong, .firefox.win .button-gray a span, .safari.win .button-gray a strong, .safari.win .button-gray a span, .chrome.win .button-gray a strong, .chrome.win .button-gray a span  {line-height: 23px;}
+
+.button-blue a span, .button-blue a strong, .button-gray a span, .button-gray a strong {background: url(/img/backgrounds/bg-modal-buttons.png) no-repeat;}
+
+.button-blue a span{background-position: left 0; padding-right: 30px;}
+.button-blue a strong{background-position: right 0; display: inline-block; padding-right: 31px;}
+.button-gray a span{background-position: left -27px; padding-right: 20px;}
+.button-gray a strong{background-position: right -27px; display: inline-block; padding-right: 21px;}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-state-hover a, .ui-state-hover a:hover, .ui-state-active, .ui-widget-content .ui-state-active, .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {outline: none;}
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-highlight a, .ui-widget-content .ui-state-highlight a { color: #363636; }
+.ui-state-error, .ui-widget-content .ui-state-error {border: 1px solid #cd0a0a; background: #fef1ec url(images/ui-bg_flat_95_fef1ec_40x100.png) 50% 50% repeat-x; color: #cd0a0a; }
+.ui-state-error a, .ui-widget-content .ui-state-error a { color: #cd0a0a; }
+.ui-state-error-text, .ui-widget-content .ui-state-error-text { color: #cd0a0a; }
+.ui-state-disabled, .ui-widget-content .ui-state-disabled { opacity: .35; filter:Alpha(Opacity=35); background-image: none;}
+.ui-priority-primary, .ui-widget-content .ui-priority-primary { font-weight: bold; }
+.ui-priority-secondary, .ui-widget-content .ui-priority-secondary { opacity: .7; filter:Alpha(Opacity=70); font-weight: normal;}
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon { display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; }
+.ui-icon { width: 16px; height: 16px; }

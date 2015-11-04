@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>MarketTribes | Smart Books Group | Discussions</title>
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/global.css" />
+	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/jquery.wysiwyg.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.roundies.js"></script>
+	<script type="text/javascript" src="js/jquery.browser.js"></script>
+	<script type="text/javascript" src="js/jquery.wysiwyg.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$("input").focus(function () { $(this).val(''); });
+			DD_roundies.addRule('.rounded', '8px');
+			$("#wysiwyg").wysiwyg();
+		});
+	</script>
+</head>
+<body>
+	<div id="main">
+		<a href="" title="Logout" class="logout">Logout</a>
+		<div id="header">
+			<h1 id="logo"><a href="">MarketTribes</a></h1>
+			<ul id="navigation">
+				<li><a href="">Dashboard</a></li>
+				<li><a href="">Collaborate</a></li>
+				<li><a href="">Apps</a></li>
+				<li><a href="">Store</a></li>
+				<li><a href="">People</a></li>
+			</ul>
+			<form action="/" method="get" accept-charset="utf-8" id="searchForm">
+				<ul>
+					<li><a href="">My Profile</a></li>
+					<li><a href="">Inbox (2)</a></li>
+				</ul>
+				<p>
+					<input type="text" name="searchTerms" value="Search&hellip;" />
+				</p>
+			</form>
+		</div><!-- /header -->
+		<div id="container">
+			<div id="column-left">
+				<img src="img/group-logo.gif" alt="" class="logo" />
+				<div id="left-navigation" class="box rounded">
+					<ul>
+						<li><a href="">Latest Activity</a></li>
+						<li><a href="" class="current">Discussions</a></li>
+						<li><a href="">Events <span>2</span></a></li>
+						<li><a href="">Documents</a></li>
+						<li><a href="">Members</a></li>
+					</ul>
+					<form action="/" method="get" accept-charset="utf-8" id="groupForm">
+						<p><input type="text" name="searchGroups" value="Search Group&hellip;" /></p>
+					</form>
+					<p><a href="" class="sprite sprite-arrow">Back to all Groups</a></p>
+				</div><!-- /box -->
+				<div id="recommendations" class="box">
+					<h4 class="sprite sprite-stats">App Recommendations</h4>
+					<ul>
+						<li><a href="">&middot;<span>Group Intellingence</span></a></li>
+						<li><a href="">&middot;<span>Marketing Assessments</span></a></li>
+					</ul>
+				</div><!-- /box -->
+			</div><!-- /column-left -->
+			
+			<div id="column-center">
+				<ul class="content-navigation">
+					<li>
+						<a href="" class="item">New Item</a>
+						<ul>
+							<li><a href="" class="sprite sprite-balloon">Discussion</a></li>
+							<li><a href="" class="sprite sprite-calendar-month">Event</a></li>
+							<li><a href="" class="sprite sprite-page">Document</a></li>
+							<li><a href="" class="sprite sprite-email">Message</a></li>
+						</ul>
+					</li>
+				</ul>
+				<h2 class="title">Smart Books Group <span>> Discussions</span> <span>> Ideas</span></h2>
+				<form action="/" method="get" accept-charset="utf-8">
+					<p>
+						<label for="title" class="sprite sprite-document-pdf"></label>
+						<input type="text" name="title" value="" id="title" class="text text-220" />
+						<span class="lblNotify">
+							<input type="checkbox" name="notify_people_of_update" value="" id="notify_people_of_update" />
+							<label for="notify_people_of_update">Notify People of Update</label>
+						</span>
+					</p>
+					<p>
+						<textarea name="comment" rows="" cols="" class="message" id="wysiwyg"></textarea>
+					</p>
+					<div class="right">
+						<a href="" class="cancel">Cancel</a>
+						<button type="submit">Save</button>
+					</div><!-- /right -->
+					<div class="left">
+						<p>
+							<label for="category">Category:</label>
+							<select name="category">
+								<option value="">Project Related</option>
+							</select>
+						</p>
+					</div><!-- /left -->
+				</form>
+				<br />
+				<h3 class="sub-title">3 Comments</h3>
+				<ol class="discussions">
+					<li>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+						<div class="features">
+							<div class="left">
+								<p>+10 votes <a href="" class="sprite sprite-good-hover">Good</a> <a href="" class="sprite sprite-bad">Bad</a></p>
+								<p><a href="">Reply</a> | <a href="">Edit</a> | <a href="" class="delete">Delete</a></p>
+							</div><!-- /left -->
+							<div class="right">
+								<img src="img/examples/avatar-1.gif" alt="" />
+								<p>by <a href="">Amanda Wright</a> <small>7 weeks ago</small></p>
+							</div><!-- /right -->
+						</div><!-- /features -->
+					</li>
+					<li>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+						<p class="file"><em><span class="sprite sprite-document-pdf ">Document</span></em> <strong><a href="">sales_presentation.pdf</a></strong></p>
+						<div class="features">
+							<div class="left">
+								<p>+10 votes <a href="" class="sprite sprite-good">Good</a> <a href="" class="sprite sprite-bad">Bad</a></p>
+								<p><a href="">Reply</a> | <a href="">Edit</a> | <a href="" class="delete">Delete</a></p>
+							</div><!-- /left -->
+							<div class="right">
+								<img src="img/examples/avatar-1.gif" alt="" />
+								<p>by <a href="">Amanda Wright</a> <small>7 weeks ago</small></p>
+							</div><!-- /right -->
+						</div><!-- /features -->
+						<ol>
+							<li>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+								<div class="features">
+									<div class="left">
+										<p>+10 votes <a href="" class="sprite sprite-good">Good</a> <a href="" class="sprite sprite-bad">Bad</a></p>
+										<p><a href="">Reply</a> | <a href="">Edit</a> | <a href="" class="delete">Delete</a></p>
+									</div><!-- /left -->
+									<div class="right">
+										<img src="img/examples/avatar-1.gif" alt="" />
+										<p>by <a href="">Amanda Wright</a> <small>7 weeks ago</small></p>
+									</div><!-- /right -->
+								</div><!-- /features -->
+							</li>
+						</ol>
+					</li>
+				</ol>
+				<form action="/" method="get" accept-charset="utf-8" id="formComment">
+					<h4>Add a Comment</h4>
+					<p>
+						<textarea name="comment" rows="" cols="" id="comment"></textarea>
+					</p>
+					<div class="right">
+						<button type="submit">Post</button>
+					</div><!-- /right -->
+					<div class="left">
+						<p><a href="" class="sprite sprite-attachment">Attach Document</a></p>
+					</div><!-- /left -->
+				</form>
+			</div><!-- /column-center -->
+			
+			<div id="column-right">
+				<div id="tools" class="box">
+					<ul>
+						<li class="sprite sprite-users"><a href="">Invite People to Join</a></li>
+						<li class="sprite sprite-notification"><a href="">Receive Notifications</a></li>
+						<li class="sprite sprite-settings"><a href="">Group Preferences</a></li>
+						<hr class="divider" />
+						<li class="sprite sprite-update"><a href="">Upload New Revision</a></li>
+						<li class="sprite sprite-download"><a href="">Download</a></li>
+						<li class="sprite sprite-history"><a href="">Revision History</a></li>
+						<li class="sprite sprite-lock"><a href="">Access Rights</a></li>
+						<li class="sprite sprite-print"><a href="">Print</a></li>
+						<li class="sprite sprite-close"><a href="">Delete</a></li>
+					</ul>
+				</div><!-- /box -->
+				<div id="expert" class="box">
+					<p>How will China's new regula-<br />tions affect my bussiness?</p>
+					<a href="" class="button">Ask an Expert!</a>
+				</div><!-- /box -->
+			</div><!-- /column-right -->
+		</div><!-- /container -->
+	</div><!-- /main -->	
+</body>
+</html>

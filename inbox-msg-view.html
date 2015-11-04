@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>MarketTribes | Smart Books Group | Events</title>
+	<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/global.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.roundies.js"></script>
+	<script type="text/javascript" src="js/jquery.browser.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$("input").focus(function () { $(this).val(''); });
+			DD_roundies.addRule('.rounded', '8px');
+			DD_roundies.addRule('h3.title', '4px');
+		});
+	</script>
+</head>
+<body>
+	<div id="main">
+		<a href="" title="Logout" class="logout">Logout</a>
+		<div id="header">
+			<h1 id="logo"><a href="">MarketTribes</a></h1>
+			<ul id="navigation">
+				<li><a href="">Dashboard</a></li>
+				<li><a href="">Collaborate</a></li>
+				<li><a href="">Apps</a></li>
+				<li><a href="">Store</a></li>
+				<li><a href="">People</a></li>
+			</ul>
+			<form action="/" method="get" accept-charset="utf-8" id="searchForm">
+				<ul>
+					<li><a href="">My Profile</a></li>
+					<li><a href="">My Career</a></li>
+				</ul>
+				<p>
+					<input type="text" name="searchTerms" value="Search&hellip;" />
+				</p>
+			</form>
+		</div><!-- /header -->
+		<div id="container">
+			<div id="column-left">
+				<img src="img/group-logo.gif" alt="" class="logo" />
+				<div id="left-navigation" class="box rounded">
+					<ul>
+						<li><a href="" class="current">Menssages</a></li>
+						<li><a href="">Sent</a></li>
+					</ul>
+					<form action="/" method="get" accept-charset="utf-8" id="groupForm">
+						<p><input type="text" name="searchMSG" value="Search Messages" /></p>
+					</form>
+				</div><!-- /box -->
+			</div><!-- /column-left -->
+			
+			<div id="column-center">
+				<p class="pagination"><a href="">Previous</a> / <a href="">Next Message</a></p>
+				<ul class="content-navigation">
+					<li>
+						<a href="" class="item noarrow">New Message</a>
+					</li>
+				</ul>
+				<h2 class="title">Dyson Vacuum Cleaners</h2>
+				<p class="email-actions">
+					<a href="" class="delete">Delete Message</a>
+					<a href="" class="button-reply">Reply</a>
+					<a href="" class="button-reply-all">Reply to All</a>
+				</p>
+				<div class="email-messages">
+					<div class="email-msg">
+						<div class="email-author">
+							<img src="img/examples/avatar-3.gif" alt="" />
+						</div><!-- /email-author -->
+						<div class="email-content">
+							<h5><a href="">John Rubenstien</a>  <small>December 16 at 2:06am</small></h5>
+							<small>Recipients: <a href="">You</a>, <a href="">John Rubenstein</a>, <a href="">Eric Cantello</a></small>
+							<p>Hi,</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+
+							<p>Cheers,<br />
+							John</p>
+						</div><!-- /email-content -->
+					</div><!-- /email-msg -->
+					<div class="email-msg">
+						<div class="email-author">
+							<img src="img/examples/avatar-3.gif" alt="" />
+						</div><!-- /email-author -->
+						<div class="email-content">
+							<h5><a href="">John Rubenstien</a>  <small>December 16 at 2:06am</small></h5>
+							<small>Recipients: <a href="">You</a>, <a href="">John Rubenstein</a>, <a href="">Eric Cantello</a></small>
+							<p>Hi,</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+
+							<p>Cheers,<br />
+							John</p>
+						</div><!-- /email-content -->
+					</div><!-- /email-msg -->
+					<div class="email-msg">
+						<div class="email-author">
+							<img src="img/examples/avatar-3.gif" alt="" />
+						</div><!-- /email-author -->
+						<div class="email-content">
+							<h5><a href="">John Rubenstien</a>  <small>December 16 at 2:06am</small></h5>
+							<small>Recipients: <a href="">You</a>, <a href="">John Rubenstein</a>, <a href="">Eric Cantello</a></small>
+							<p>Hi,</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+
+							<p>Cheers,<br />
+							John</p>
+						</div><!-- /email-content -->
+					</div><!-- /email-msg -->
+				</div><!-- /email-messages -->
+			</div><!-- /column-center -->
+			
+			<div id="column-right">
+				<div id="expert" class="box">
+					<p>How will China's new regula-<br />tions affect my bussiness?</p>
+					<a href="" class="button">Ask an Expert!</a>
+				</div><!-- /box -->
+			</div><!-- /column-right -->
+		</div><!-- /container -->
+	</div><!-- /main -->	
+</body>
+</html>
